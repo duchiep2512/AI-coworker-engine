@@ -1,0 +1,153 @@
+SIMULATION: Gucci Group — HRM Talent & Leadership Development 2.0
+
+═══════════════════════════════════════════════════════════
+SECTION 1: COMPANY OVERVIEW & GROUP DNA
+═══════════════════════════════════════════════════════════
+
+Gucci Group is a global luxury conglomerate operating nine iconic fashion and luxury brands.
+Each brand maintains a high degree of autonomy in creative direction, brand identity, and
+regional operations. The Group's mission is to nurture world-class luxury brands while
+fostering synergies across the portfolio.
+
+Group DNA Pillars:
+- Excellence in Craftsmanship: Every brand upholds the highest standards of artisan quality.
+- Creative Autonomy: Each brand has the freedom to define its own creative vision and identity.
+- Heritage & Innovation: Balancing respect for brand history with forward-looking innovation.
+- Sustainable Luxury: Commitment to responsible sourcing, ethical labor, and environmental stewardship.
+
+The CEO firmly believes that standardization should never come at the cost of brand identity.
+Group-level initiatives must "support, not impose." The tension between operational efficiency
+(shared services, talent mobility) and brand uniqueness is the central strategic challenge.
+
+Brand Autonomy vs. Group Needs:
+- Each brand has its own CEO, creative director, and regional leadership.
+- Group HR provides frameworks and tools, but brands decide how to adapt and implement.
+- Inter-brand talent mobility is encouraged but never forced.
+- The Group DNA is a unifying "north star," not a rigid set of rules.
+
+═══════════════════════════════════════════════════════════
+SECTION 2: GROUP HR MISSION & COMPETENCY FRAMEWORK
+═══════════════════════════════════════════════════════════
+
+Group HR Mission (CHRO's Mandate):
+(a) Identify and develop high-potential talent across all nine brands.
+(b) Increase inter-brand mobility — enabling leaders to gain cross-brand experience.
+(c) Support (not impose on) brand DNA — any Group HR initiative must respect brand identity.
+
+The Competency Framework — Four Pillars:
+
+1. VISION
+   - Junior Level: Understands the brand's market position and can articulate short-term goals.
+   - Mid Level: Translates brand strategy into team-level objectives; anticipates market shifts.
+   - Senior Level: Shapes long-term brand and Group strategy; inspires others with a compelling future state.
+
+2. ENTREPRENEURSHIP
+   - Junior Level: Takes initiative on assigned projects; proposes small improvements.
+   - Mid Level: Identifies new business opportunities; takes calculated risks with accountability.
+   - Senior Level: Drives transformational change; builds new business models or enters new markets.
+
+3. PASSION
+   - Junior Level: Shows genuine enthusiasm for the brand and luxury industry.
+   - Mid Level: Inspires team members; acts as a brand ambassador internally and externally.
+   - Senior Level: Embodies the brand's soul; creates an emotional connection with stakeholders.
+
+4. TRUST
+   - Junior Level: Delivers on commitments; communicates transparently with immediate team.
+   - Mid Level: Builds trust across functions; handles confidential information with integrity.
+   - Senior Level: Earns trust of the Board and external partners; role-models ethical leadership.
+
+Use Cases for the Competency Framework:
+- Recruitment: Competency-based interview guides for each level.
+- Annual Appraisal: 360° feedback mapped to the four pillars.
+- Development: Individual Development Plans (IDPs) linked to competency gaps.
+- Mobility: Cross-brand rotation criteria based on demonstrated competencies.
+
+═══════════════════════════════════════════════════════════
+SECTION 3: 360° FEEDBACK & COACHING PROGRAM
+═══════════════════════════════════════════════════════════
+
+Program Design:
+- Rater Groups: Self, Manager, Peers (min 3), Direct Reports (min 2), Cross-brand Stakeholder (1).
+- Scale: 5-point behavioral frequency scale (Never → Always).
+- Items: 8 items per competency theme = 32 total items + 4 open-ended questions.
+- Anonymity: All rater responses are anonymized except Manager feedback.
+- Language Coverage: English, French, Italian, Mandarin, Japanese.
+
+Participant Journey:
+1. Week 1: Communication & briefing (email + town hall).
+2. Week 2-3: Rater nomination and consent collection (GDPR-compliant).
+3. Week 4-5: Survey window opens — reminders at Day 5 and Day 10.
+4. Week 6: Reports generated; individual debriefs scheduled.
+5. Week 7-8: Coaching sessions begin (3-session arc: Reflect → Plan → Commit).
+
+Coaching Program:
+- Coach Profile: ICF-certified, luxury industry experience preferred, culturally sensitive.
+- Session Cadence: 3 sessions over 6 weeks (90 min each).
+- Goals-to-Habits Plan: Each coachee leaves with 2-3 micro-habits tied to competency gaps.
+
+Vendor Considerations:
+- Build vs Buy: Core platform built in-house (to protect brand data); 360° survey tool licensed.
+- Benchmarking: External benchmarks from CCL (Center for Creative Leadership) and Korn Ferry.
+- Data Security: All data stored in EU data centers; SOC 2 Type II compliance required.
+
+═══════════════════════════════════════════════════════════
+SECTION 4: REGIONAL ROLLOUT — EUROPE
+═══════════════════════════════════════════════════════════
+
+Current Status (Europe Region):
+- 4 out of 9 brands have piloted the competency framework informally.
+- France and Italy offices are most advanced; UK and Germany are in early stages.
+- Key challenge: Translating competency behaviors into culturally appropriate language.
+- HR teams in smaller markets (Benelux, Nordics) have limited bandwidth.
+
+Regional Manager's Concerns:
+- "We need local HR champions, not a top-down mandate from Paris."
+- "Training materials must be adapted — what 'Entrepreneurship' looks like in Milan differs from Munich."
+- "Time pressure is real: Q3 is peak season, and pulling managers for training is tough."
+- "Some brand HR leads are skeptical — they see this as Group HR overreach."
+
+Rollout Plan Essentials:
+- Phase 1 (Q1): Pilot in 2 brands × 2 regions → gather feedback.
+- Phase 2 (Q2): Iterate based on pilot data; expand to remaining brands in pilot regions.
+- Phase 3 (Q3-Q4): Full cascade across all 9 brands × all regions.
+- Delivery Method: Interactive workshops (2 days) delivered by local HR with Group HR support.
+- Train-the-Trainer: Regional HR leads attend a 3-day certification program.
+
+Change Risks & Mitigation:
+| Risk | Mitigation |
+|------|-----------|
+| Brand identity dilution | Customizable competency language per brand |
+| Low manager buy-in | CEO-level sponsorship communications |
+| Survey fatigue | Cap 360° frequency at once per year |
+| Data privacy concerns | GDPR-compliant platform; clear consent flows |
+| Inconsistent coaching quality | Standardized coach certification + supervision |
+
+KPI Framework:
+- Leading: % of leaders completing 360° (target: 85%), # coaching sessions delivered.
+- Lagging: Internal promotion rate, inter-brand mobility rate, engagement score delta.
+- Reporting Cadence: Monthly dashboards to CHRO; quarterly exec summary to CEO.
+
+═══════════════════════════════════════════════════════════
+SECTION 5: SIMULATION TASKS SUMMARY
+═══════════════════════════════════════════════════════════
+
+Module 1 (35-45 min): Frame the leadership problem & define "Group DNA"
+- Write a problem statement balancing brand autonomy with Group needs.
+- Consult CEO on business, mission, culture, and DNA.
+- Consult CHRO on HR mission and competency framework.
+- Map use cases (recruitment, appraisal, development, mobility).
+- Deliverables: 1-page problem statement, competency matrix (4 themes × 3 levels), 10-slide CEO pack.
+
+Module 2 (55-65 min): Design the 360° + coaching program
+- Specify instrument blueprint (rater groups, scale, items, anonymity, languages).
+- Draft participant & rater journey.
+- Outline coaching program (coach profile, cadence, goals-to-habits).
+- Create vendor plan: build vs buy, benchmarking, data security.
+- Deliverables: 5-page program spec, comms templates, sample 360° questionnaire.
+
+Module 3 (30-40 min): Cascade & measure adoption
+- Consult Regional Manager for Europe insights.
+- Build train-the-trainer rollout plan.
+- Define change risks and mitigation.
+- Construct measurement plan (KPIs, dashboards).
+- Deliverables: Rollout playbook (checklist + RACI), KPI table, sample exec insights page.

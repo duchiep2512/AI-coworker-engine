@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Co-Worker Engine | Gucci Group Simulation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>🤖 AI Co-Worker</h1>
+                <span class="subtitle">Gucci Group Simulation</span>
+            </div>
+            
+            <!-- Agent Selection -->
+            <div class="agent-section">
+                <h3>Select Agent</h3>
+                <div class="agent-cards">
+                    <div class="agent-card active" data-agent="CEO">
+                        <div class="agent-avatar">👔</div>
+                        <div class="agent-info">
+                            <strong>CEO</strong>
+                            <span>Group DNA & Strategy</span>
+                        </div>
+                    </div>
+                    <div class="agent-card" data-agent="CHRO">
+                        <div class="agent-avatar">👥</div>
+                        <div class="agent-info">
+                            <strong>CHRO</strong>
+                            <span>HR & Competencies</span>
+                        </div>
+                    </div>
+                    <div class="agent-card" data-agent="RegionalManager">
+                        <div class="agent-avatar">🌍</div>
+                        <div class="agent-info">
+                            <strong>Regional Manager</strong>
+                            <span>Europe Operations</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Auto-Route Toggle -->
+                <div class="auto-route-toggle">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="auto-route-toggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <span class="toggle-label">Auto-Route by Content</span>
+                </div>
+            </div>
+            
+            <!-- Session Info -->
+            <div class="session-section">
+                <h3>Session Info</h3>
+                <div class="session-stats">
+                    <div class="stat">
+                        <span class="stat-label">Session ID</span>
+                        <span class="stat-value" id="session-id">Not started</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Turn Count</span>
+                        <span class="stat-value" id="turn-count">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Sentiment</span>
+                        <div class="sentiment-bar">
+                            <div class="sentiment-fill" id="sentiment-fill" style="width: 50%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Task Progress -->
+            <div class="progress-section">
+                <h3>Task Progress</h3>
+                <div class="task-list" id="task-list">
+                    <div class="task-item" data-task="problem_statement_written">
+                        <span class="task-check">○</span>
+                        <span>Define Problem Statement</span>
+                    </div>
+                    <div class="task-item" data-task="ceo_consulted">
+                        <span class="task-check">○</span>
+                        <span>Consult CEO</span>
+                    </div>
+                    <div class="task-item" data-task="chro_consulted">
+                        <span class="task-check">○</span>
+                        <span>Consult CHRO</span>
+                    </div>
+                    <div class="task-item" data-task="competency_model_drafted">
+                        <span class="task-check">○</span>
+                        <span>Draft Competency Model</span>
+                    </div>
+                    <div class="task-item" data-task="360_program_designed">
+                        <span class="task-check">○</span>
+                        <span>Design 360° Program</span>
+                    </div>
+                    <div class="task-item" data-task="regional_manager_consulted">
+                        <span class="task-check">○</span>
+                        <span>Consult Regional Manager</span>
+                    </div>
+                    <div class="task-item" data-task="rollout_plan_built">
+                        <span class="task-check">○</span>
+                        <span>Build Rollout Plan</span>
+                    </div>
+                    <div class="task-item" data-task="kpi_table_defined">
+                        <span class="task-check">○</span>
+                        <span>Define KPI Table</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Actions -->
+            <div class="actions-section">
+                <button class="btn btn-secondary" id="new-session-btn">🔄 New Session</button>
+                <button class="btn btn-outline" id="export-btn">📥 Export Chat</button>
+            </div>
+        </aside>
+        
+        <!-- Main Chat Area -->
+        <main class="chat-container">
+            <!-- Chat Header -->
+            <header class="chat-header">
+                <div class="current-agent">
+                    <span class="agent-badge" id="current-agent-badge">👔</span>
+                    <div class="agent-details">
+                        <h2 id="current-agent-name">CEO</h2>
+                        <span id="current-agent-desc">Gucci Group CEO — Group DNA & Strategy</span>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <span class="latency-badge" id="latency-badge">--ms</span>
+                    <span class="status-badge online">Connected</span>
+                </div>
+            </header>
+            
+            <!-- Messages -->
+            <div class="messages-container" id="messages-container">
+                <!-- Welcome Message -->
+                <div class="message system">
+                    <div class="message-content">
+                        <p>👋 Welcome to the <strong>Gucci Group Leadership Development Simulation</strong>!</p>
+                        <p>You are the <strong>OD Director</strong> tasked with designing a new leadership development program. 
+                        Consult with the CEO, CHRO, and Regional Manager to gather insights and build your proposal.</p>
+                        <p><em>Select an agent and start chatting!</em></p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Input Area -->
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <textarea 
+                        id="message-input" 
+                        placeholder="Type your message... (Press Enter to send, Shift+Enter for new line)"
+                        rows="1"
+                    ></textarea>
+                    <button class="send-btn" id="send-btn" disabled>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+                <div class="input-hints">
+                    <span>💡 Tip: Ask about brand autonomy, competency frameworks, or regional rollout strategies</span>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay" style="display: none;">
+        <div class="loading-spinner"></div>
+        <span>AI is thinking...</span>
+    </div>
+    
+    <script src="/static/app.js"></script>
+</body>
+</html>
