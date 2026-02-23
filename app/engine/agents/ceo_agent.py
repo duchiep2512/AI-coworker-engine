@@ -13,9 +13,9 @@ class CEOAgent(BaseNPCAgent):
 
 _agent = CEOAgent()
 
-def ceo_node(state: AgentState) -> dict:
+async def ceo_node(state: AgentState) -> dict:
     """LangGraph node function for the CEO agent."""
-    result = _agent.invoke(state)
+    result = await _agent.ainvoke(state)
     # Mark that user has consulted CEO
     task_progress = state.get("task_progress", {}).copy()
     task_progress["ceo_consulted"] = True

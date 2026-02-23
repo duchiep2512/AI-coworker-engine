@@ -67,11 +67,18 @@ def supervisor_node(state: AgentState) -> dict:
     )
 
     response = llm.invoke(prompt)
-    decision = response.content.strip()
+    raw_decision = response.content.strip().split()[0] if response.content.strip() else "CEO"
+    # Remove any quotes/punctuation the LLM might add
+    decision = raw_decision.strip('"\' .,;:')
 
-    # Validate the decision
-    valid_speakers = {"CEO", "CHRO", "RegionalManager", "Mentor", "SafetyBlock"}
-    if decision not in valid_speakers:
+    # The Supervisor should ONLY route to content-based agents or SafetyBlock.
+    # Mentor is NEVER selected by the Supervisor — only the Director can trigger Mentor.
+    valid_speakers = {"CEO", "CHRO", "RegionalManager", "SafetyBlock"}
+    if decision == "Mentor":
+        # LLM incorrectly chose Mentor — re-route based on content keywords
+        decision = _fallback_keyword_route(state["user_message"])
+        logger.warning(f"Supervisor tried to route to Mentor — overriding to {decision} via keyword fallback")
+    elif decision not in valid_speakers:
         logger.warning(f"Supervisor returned invalid decision: '{decision}'. Defaulting to CEO.")
         decision = "CEO"
 
@@ -81,3 +88,38 @@ def supervisor_node(state: AgentState) -> dict:
         "next_speaker": decision,
         "turn_count": state.get("turn_count", 0) + 1,
     }
+
+
+def _fallback_keyword_route(user_message: str) -> str:
+    """
+    Keyword-based fallback routing when the LLM incorrectly routes to Mentor.
+    Scans the user message for domain keywords and picks the best agent.
+    """
+    msg = user_message.lower()
+
+    ceo_keywords = [
+        "strategy", "brand", "dna", "mission", "culture", "autonomy", "vision",
+        "budget", "craftsmanship", "heritage", "innovation", "technology",
+        "luxury", "identity", "standardization", "centralization", "values",
+        "ceo", "group dna", "brand autonomy",
+    ]
+    chro_keywords = [
+        "hr", "competency", "competencies", "360", "feedback", "coaching",
+        "talent", "pillar", "pillars", "behavioral", "performance", "training",
+        "framework", "vision entrepreneurship passion trust", "chro",
+    ]
+    regional_keywords = [
+        "regional", "europe", "rollout", "france", "italy", "uk", "germany",
+        "timeline", "q3", "pilot", "cascade", "logistics", "local",
+        "train-the-trainer", "regional manager",
+    ]
+
+    ceo_score = sum(1 for kw in ceo_keywords if kw in msg)
+    chro_score = sum(1 for kw in chro_keywords if kw in msg)
+    regional_score = sum(1 for kw in regional_keywords if kw in msg)
+
+    if regional_score > ceo_score and regional_score > chro_score:
+        return "RegionalManager"
+    if chro_score > ceo_score:
+        return "CHRO"
+    return "CEO"  # Default to CEO for strategy/general questions

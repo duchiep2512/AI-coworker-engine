@@ -123,6 +123,15 @@ def main():
                 "task_progress": task_progress,
                 "hint_triggered": False,
                 "safety_flagged": False,
+                "user_explicit_choice": False,
+                "agent_emotions": {
+                    "CEO": {"relationship_score": 0.5, "tension_count": 0, "last_topic": "", "memorable_events": []},
+                    "CHRO": {"relationship_score": 0.5, "tension_count": 0, "last_topic": "", "memorable_events": []},
+                    "RegionalManager": {"relationship_score": 0.5, "tension_count": 0, "last_topic": "", "memorable_events": []},
+                },
+                "user_approach_style": "unknown",
+                "repeated_mistakes": [],
+                "session_narrative": "",
             }
 
             # Run engine

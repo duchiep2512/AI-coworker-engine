@@ -13,7 +13,7 @@ class MentorAgent(BaseNPCAgent):
 
 _agent = MentorAgent()
 
-def mentor_node(state: AgentState) -> dict:
+async def mentor_node(state: AgentState) -> dict:
     """LangGraph node function for the Mentor agent."""
-    result = _agent.invoke(state)
+    result = await _agent.ainvoke(state)
     return result

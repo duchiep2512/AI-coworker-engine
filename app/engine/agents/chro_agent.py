@@ -13,9 +13,9 @@ class CHROAgent(BaseNPCAgent):
 
 _agent = CHROAgent()
 
-def chro_node(state: AgentState) -> dict:
+async def chro_node(state: AgentState) -> dict:
     """LangGraph node function for the CHRO agent."""
-    result = _agent.invoke(state)
+    result = await _agent.ainvoke(state)
     # Mark that user has consulted CHRO
     task_progress = state.get("task_progress", {}).copy()
     task_progress["chro_consulted"] = True

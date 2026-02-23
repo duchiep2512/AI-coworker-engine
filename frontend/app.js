@@ -341,9 +341,10 @@ async function handleSend() {
             });
         }
         
-        // If Mentor (System Guide) responded, show as system hint
+        // If Mentor responded via Director hint, show as hint message
+        // But still show it as a proper agent message with the Mentor label
         if (respondingAgent === 'Mentor') {
-            addSystemMessage(`💡 Hint: ${response.response}`);
+            addMessage(`💡 Hint: ${response.response}`, 'agent', 'Mentor');
         } else {
             // Add normal agent response with agent name
             addMessage(response.response, 'agent', respondingAgent);

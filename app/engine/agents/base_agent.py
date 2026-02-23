@@ -125,10 +125,17 @@ class BaseNPCAgent(ABC):
         """
         try:
             loop = asyncio.get_running_loop()
-            # If we're already in an async context, use create_task
-            import nest_asyncio
-            nest_asyncio.apply()
-            return asyncio.get_event_loop().run_until_complete(self.ainvoke(state))
         except RuntimeError:
-            # No event loop running, safe to use run_until_complete
-            return asyncio.get_event_loop().run_until_complete(self.ainvoke(state))
+            loop = None
+
+        if loop and loop.is_running():
+            # Already in an async context — use nest_asyncio to allow nested loops
+            try:
+                import nest_asyncio
+                nest_asyncio.apply()
+            except ImportError:
+                pass
+            return loop.run_until_complete(self.ainvoke(state))
+        else:
+            # No event loop running — create one
+            return asyncio.run(self.ainvoke(state))

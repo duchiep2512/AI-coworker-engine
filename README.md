@@ -33,7 +33,7 @@ AI Co-Worker Engine là hệ thống NPC (đồng nghiệp ảo) cho mô phỏng
 
 Ảnh minh họa kiến trúc tổng quan:
 
-![Sơ đồ kiến trúc](image/Sơ đồ kiến trúc.png)
+![Sơ đồ kiến trúc](image/kientruc.png)
 
 ---
 
@@ -126,28 +126,3 @@ pip install -r requirements.txt
 python -m app.knowledge.ingest
 uvicorn app.main:app --reload
 ```
-
----
-
-## 📁 Các File Quan Trọng
-
-| File | Vai trò |
-|---|---|
-| [app/engine/graph.py](app/engine/graph.py) | LangGraph state machine |
-| [app/engine/state.py](app/engine/state.py) | Shared AgentState |
-| [app/personas/prompts.py](app/personas/prompts.py) | Hệ thống prompt nhân vật |
-| [app/knowledge/retriever.py](app/knowledge/retriever.py) | RAG + truy xuất context |
-| [app/api/middleware/safety.py](app/api/middleware/safety.py) | Safety + guardrails |
-
----
-
-## 🚀 Hướng Phát Triển
-
-1. Hỗ trợ streaming (WebSocket)
-2. Mở rộng đa ngôn ngữ (Pháp, Ý, Trung)
-3. Dashboard theo dõi tiến trình
-4. Fine-tune embeddings để tăng độ chính xác
-
----
-
-**Liên hệ:** [email@example.com]

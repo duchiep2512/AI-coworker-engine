@@ -13,9 +13,9 @@ class RegionalManagerAgent(BaseNPCAgent):
 
 _agent = RegionalManagerAgent()
 
-def regional_manager_node(state: AgentState) -> dict:
+async def regional_manager_node(state: AgentState) -> dict:
     """LangGraph node function for the Regional Manager agent."""
-    result = _agent.invoke(state)
+    result = await _agent.ainvoke(state)
     # Mark that user has consulted Regional Manager
     task_progress = state.get("task_progress", {}).copy()
     task_progress["regional_manager_consulted"] = True

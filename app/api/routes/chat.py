@@ -311,7 +311,7 @@ async def chat(request: ChatRequest, background_tasks: BackgroundTasks):
     logger.info(f"Processing message from user={request.user_id} session={session_id}")
 
     try:
-        result = engine.invoke(graph_input)
+        result = await engine.ainvoke(graph_input)
     except Exception as e:
         logger.error(f"Engine error: {e}")
         latency = int((time.time() - start_time) * 1000)
@@ -525,7 +525,7 @@ async def export_chat(session_id: str):
     ]
     
     for task, done in state.get("task_progress", {}).items():
-        status = "" if done else ""
+        status = "[x]" if done else "[ ]"
         lines.append(f"- {status} {task}")
     
     lines.append("")

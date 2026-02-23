@@ -44,8 +44,14 @@ def build_index(documents: List[Document], role_key: str) -> FAISS:
 
 #  LOAD / QUERY
 
+# In-memory cache for loaded FAISS indices (avoids reloading from disk every query)
+_index_cache: dict[str, FAISS] = {}
+
 def load_index(role_key: str) -> Optional[FAISS]:
-    """Load a persisted FAISS index for the given role."""
+    """Load a persisted FAISS index for the given role (cached in memory)."""
+    if role_key in _index_cache:
+        return _index_cache[role_key]
+
     index_path = _index_path(role_key)
     if not index_path.exists():
         logger.warning(f"FAISS index not found at {index_path}")
@@ -57,6 +63,7 @@ def load_index(role_key: str) -> Optional[FAISS]:
         embeddings,
         allow_dangerous_deserialization=True,
     )
+    _index_cache[role_key] = vectorstore
     logger.info(f"FAISS index loaded ← {index_path}")
     return vectorstore
 
