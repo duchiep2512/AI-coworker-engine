@@ -1,4 +1,4 @@
-# 🤖 AI Co-Worker Engine — Báo Cáo Kỹ Thuật (Tiếng Việt)
+# 🤖 AI Co-Worker Engine 
 
 > Hệ thống AI Co-Worker Engine mô phỏng đồng nghiệp ảo cho bài tập đào tạo lãnh đạo.
 > Tập trung vào khả năng phân vai, bộ nhớ, và ngữ cảnh doanh nghiệp.
@@ -33,7 +33,7 @@ AI Co-Worker Engine là hệ thống NPC (đồng nghiệp ảo) cho mô phỏng
 
 Ảnh minh họa kiến trúc tổng quan:
 
-![Sơ đồ kiến trúc](image/architecture.png)
+![Sơ đồ kiến trúc](image/Sơ đồ kiến trúc.png)
 
 ---
 
